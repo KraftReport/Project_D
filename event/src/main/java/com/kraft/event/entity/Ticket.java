@@ -1,0 +1,30 @@
+package com.kraft.event.entity;
+
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "ticket")
+@Getter
+@Setter
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Builder
+public class Ticket extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private LocalDateTime saleStart;
+    private LocalDateTime saleEnd;
+    private String photo;
+    private String description;
+    private boolean isEarlyBird;
+    private Long festivalId;
+    private Long packageId;
+    private Long ticketRoleId;
+    private Long ticketTypeId;
+
+}
