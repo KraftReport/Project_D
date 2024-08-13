@@ -1,10 +1,17 @@
 package com.kraft.event.entity;
 
+import jakarta.persistence.EntityListeners;
+import lombok.*;
 import org.apache.catalina.User;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.MappedSuperclass;
 
 import java.time.LocalDateTime;
 
-public class BaseEntity {
+@MappedSuperclass
+@Data
+public abstract class BaseEntity {
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
     private String createdUserId;
