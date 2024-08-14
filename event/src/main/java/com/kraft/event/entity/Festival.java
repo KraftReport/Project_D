@@ -2,17 +2,17 @@ package com.kraft.event.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "festival")
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-@Builder
-public class Festival extends BaseEntity{
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+public class Festival extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,5 +25,5 @@ public class Festival extends BaseEntity{
     private LocalDateTime showTime;
     private String warningMessage;
     private boolean isHidden;
-    private String termAndConditionId;
+    private Long termAndConditionId;
 }
