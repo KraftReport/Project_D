@@ -1,5 +1,6 @@
 package com.kraft.event.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -13,19 +14,13 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @Getter
 @Setter
-@NoArgsConstructor
 @SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class BaseEntity {
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
     private Long createdUserId;
     private Long updatedUserId;
     private boolean isDeleted;
-    protected BaseEntity(LocalDateTime createdDate, LocalDateTime updatedDate, Long createdUserId, Long updatedUserId, boolean isDeleted) {
-        this.createdDate = createdDate;
-        this.updatedDate = updatedDate;
-        this.createdUserId = createdUserId;
-        this.updatedUserId = updatedUserId;
-        this.isDeleted = isDeleted;
-    }
 }

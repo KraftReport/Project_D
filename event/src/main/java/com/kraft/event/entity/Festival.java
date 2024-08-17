@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
-public class Festival extends BaseEntity {
+@Builder
+public class Festival {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,4 +26,9 @@ public class Festival extends BaseEntity {
     private String warningMessage;
     private boolean isHidden;
     private Long termAndConditionId;
+    private LocalDateTime createdDate;
+    private LocalDateTime updatedDate;
+    private Long createdUserId;
+    private Long updatedUserId;
+    private boolean isDeleted;
 }
