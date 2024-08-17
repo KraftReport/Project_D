@@ -2,11 +2,13 @@ package com.kraft.event.mapper.festival;
 
 import com.kraft.event.entity.Festival;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 
+@Component
 public class FestivalRowMapper implements RowMapper<Festival> {
     @Override
     public Festival mapRow(ResultSet rs, int rowNum) throws SQLException {
