@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,10 +12,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Festival {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Festival extends BaseEntity{
+
     private String name;
     private String shortName;
     private String photo;
@@ -26,9 +24,5 @@ public class Festival {
     private String warningMessage;
     private boolean isHidden;
     private Long termAndConditionId;
-    private LocalDateTime createdDate;
-    private LocalDateTime updatedDate;
-    private Long createdUserId;
-    private Long updatedUserId;
     private boolean isDeleted;
 }

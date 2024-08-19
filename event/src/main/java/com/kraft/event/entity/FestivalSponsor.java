@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,10 +10,8 @@ import lombok.*;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class FestivalSponsor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class FestivalSponsor extends BaseEntity {
+
     private Long festivalId;
     private Long sponsorId;
     private Long orderColumn;

@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,10 +12,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class FestivalRegistration {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class FestivalRegistration extends BaseEntity {
+
     private Long serialNumber;
     private String buyerName;
     private String buyerContact;
@@ -27,5 +25,4 @@ public class FestivalRegistration {
     private Long buyerId;
     private Long ticketPrice;
     private Long festivalId;
-    private boolean isDeleted;
 }

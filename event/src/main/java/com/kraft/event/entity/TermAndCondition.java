@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
 import jakarta.persistence.*;
@@ -12,9 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class TermAndCondition extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String name;
     private String fileName;
     private boolean enable;

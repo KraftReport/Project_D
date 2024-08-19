@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,10 +14,8 @@ import lombok.*;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class EnableTermAndCondition {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class EnableTermAndCondition extends BaseEntity {
+
     private Long festivalId;
     private Long applicationUserId;
     private boolean isEnable;

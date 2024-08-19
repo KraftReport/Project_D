@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,9 +15,8 @@ import lombok.*;
 @RequiredArgsConstructor
 @Builder
 public class Artist extends BaseEntity{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+
     private String name;
     private String photo;
 }

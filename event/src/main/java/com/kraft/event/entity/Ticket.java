@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import jakarta.persistence.*;
@@ -14,9 +14,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @Builder
 public class Ticket extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private LocalDateTime saleStart;
     private LocalDateTime saleEnd;
     private String photo;
