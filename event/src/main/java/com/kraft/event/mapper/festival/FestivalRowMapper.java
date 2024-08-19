@@ -10,18 +10,14 @@ import java.time.LocalDateTime;
 
 @Component
 public class FestivalRowMapper implements RowMapper<Festival> {
+
     @Override
     public Festival mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return Festival.builder()
-                .id(rs.getLong("id"))
+        Festival festival = Festival.builder()
                 .name(rs.getString("name"))
                 .location(rs.getString("location"))
                 .photo(rs.getString("photo"))
                 .warningMessage(rs.getString("warning_message"))
-                .createdDate(rs.getObject("created_date", LocalDateTime.class))
-                .createdUserId(rs.getLong("created_user_id"))
-                .updatedDate(rs.getObject("updated_date", LocalDateTime.class))
-                .updatedUserId(rs.getLong("updated_user_id"))
                 .isDeleted(rs.getBoolean("is_deleted"))
                 .showTime(rs.getObject("show_time", LocalDateTime.class))
                 .shortName(rs.getString("short_name"))
@@ -30,5 +26,14 @@ public class FestivalRowMapper implements RowMapper<Festival> {
                 .endDate(rs.getObject("end_date", LocalDateTime.class))
                 .termAndConditionId(rs.getLong("term_and_condition_id"))
                 .build();
+
+        festival.setId(rs.getLong("id"));
+        festival.setCreatedDate(rs.getObject("created_date", LocalDateTime.class));
+        festival.setUpdatedDate(rs.getObject("updated_date", LocalDateTime.class));
+        festival.setCreatedUserId(rs.getLong("created_user_id"));
+        festival.setUpdatedUserId(rs.getLong("updated_user_id"));
+        festival.setDeleted(rs.getBoolean("is_deleted"));
+
+        return festival;
     }
 }
