@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,9 +11,7 @@ import lombok.*;
 @RequiredArgsConstructor
 @Builder
 public class Producer extends BaseEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String myanmarName;
     private String englishName;
     private String otherName;

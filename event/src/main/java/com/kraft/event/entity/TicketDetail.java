@@ -1,4 +1,4 @@
-package com.kraft.event.entity;
+package com.example.msppj.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,10 +16,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class TicketDetail {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Long id;
+public class TicketDetail extends BaseEntity {
+
     private Long goldPlate;
     private Long silverPlate;
     private Long countLimit;
