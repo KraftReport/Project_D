@@ -1,5 +1,6 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
 
+import com.kraft.event.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

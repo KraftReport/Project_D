@@ -1,4 +1,4 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-
 public abstract class BaseEntity {
 
     @Id

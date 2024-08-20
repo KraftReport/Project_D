@@ -1,4 +1,4 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

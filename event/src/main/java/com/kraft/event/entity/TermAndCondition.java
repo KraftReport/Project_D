@@ -1,4 +1,4 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
 import jakarta.persistence.*;
