@@ -1,4 +1,4 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import jakarta.persistence.*;

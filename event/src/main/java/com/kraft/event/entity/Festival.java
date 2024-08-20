@@ -1,8 +1,8 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
+import com.kraft.event.entity.*;
 
 import java.time.LocalDateTime;
 @Entity
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Festival extends BaseEntity{
+public class Festival extends BaseEntity {
 
     private String name;
     private String shortName;

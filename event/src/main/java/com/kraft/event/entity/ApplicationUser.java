@@ -1,4 +1,5 @@
-package com.example.msppj.entity;
+package com.kraft.event.entity;
+
 
 public class ApplicationUser {
 
