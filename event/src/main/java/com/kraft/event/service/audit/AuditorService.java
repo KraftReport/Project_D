@@ -17,7 +17,7 @@ public class AuditorService {
     private AuditAwareConfig auditAwareConfig;
     private static final Random random = new Random();
 
-    public <T extends BaseEntity> BaseEntity entityCreation(T t){
+    public <T extends BaseEntity>T entityCreation(T t){
         t.setCreatedDate(LocalDateTime.now());
         t.setUpdatedDate(null);
         t.setCreatedUserId(auditAwareConfig.getCurrentAuditor().orElseThrow(()->new UserNotFoundException("not found")));
