@@ -20,9 +20,7 @@ public class FestivalRepository {
     private String createQuery ;
 
     public boolean createFestival(Festival festival){
-        System.err.println(festival.getName() + "----------------------");
         var festivalEntity = auditorService.entityCreation(festival);
-        System.err.println(festivalEntity.getName() + "++++++++++++++++++++++++");
         var namedParameters = new BeanPropertySqlParameterSource(festivalEntity);
         return namedParameterJdbcTemplate.update(createQuery,namedParameters) > 0;
     }

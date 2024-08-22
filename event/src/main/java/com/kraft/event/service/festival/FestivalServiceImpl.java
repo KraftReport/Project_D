@@ -16,11 +16,10 @@ public class FestivalServiceImpl implements FestivalService {
 
     private final FestivalMapper festivalMapper;
     private final FestivalRowMapper festivalRowMapper;
-    private final FestivalRepository festivalRepository;
-    private final AuditorService auditorService;
+    private final FestivalRepository festivalRepository; 
 
     @Override
     public boolean saveFestival(FestivalRequestModal festivalRequestModal) {
-        return festivalRepository.createFestival(festivalMapper.toFestivalEntity(festivalRequestModal));
+        return festivalRepository.createFestival(festivalMapper.fromDTOToFestivalEntity(festivalRequestModal));
     }
 }

@@ -18,7 +18,6 @@ public class FestivalRowMapper implements RowMapper<Festival> {
                 .location(rs.getString("location"))
                 .photo(rs.getString("photo"))
                 .warningMessage(rs.getString("warning_message"))
-                .isDeleted(rs.getBoolean("is_deleted"))
                 .showTime(rs.getObject("show_time", LocalDateTime.class))
                 .shortName(rs.getString("short_name"))
                 .isHidden(rs.getBoolean("is_hidden"))
