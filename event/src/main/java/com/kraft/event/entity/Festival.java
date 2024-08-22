@@ -24,5 +24,4 @@ public class Festival extends BaseEntity {
     private String warningMessage;
     private boolean isHidden;
     private Long termAndConditionId;
-    private boolean isDeleted;
 }
