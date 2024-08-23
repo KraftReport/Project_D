@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FestivalRepository {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private final Environment environment;
     private final AuditorService auditorService;
 
     @Value("${create.festival}")
