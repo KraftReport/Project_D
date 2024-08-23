@@ -23,7 +23,7 @@ public class FileUploadService {
             var location = Paths.get("src/main/resources/static/files").toAbsolutePath().normalize();
             if(!Files.exists(location)){
                 Files.createDirectories(location);
-            } 
+            }
             var filePath = location.resolve(fileName);
             Files.copy(multipartFile.getInputStream(),filePath,REPLACE_EXISTING);
             return filePath.toString();
