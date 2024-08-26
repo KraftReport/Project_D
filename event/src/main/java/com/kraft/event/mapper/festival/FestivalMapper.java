@@ -23,7 +23,7 @@ public class FestivalMapper {
                 .warningMessage(festivalRequestModal.getWarningMessage())
                 .startDate(festivalRequestModal.getStartDate())
                 .endDate(festivalRequestModal.getEndDate())
-//                .photo(fileUploadService.uploadFile.apply(festivalRequestModal.getPhoto()))
+                .photo(fileUploadService.uploadFile.apply(festivalRequestModal.getPhoto()))
                 .isHidden(festivalRequestModal.isHidden())
                 .termAndConditionId(festivalRequestModal.getTermAndConditionId())
                 .build();
