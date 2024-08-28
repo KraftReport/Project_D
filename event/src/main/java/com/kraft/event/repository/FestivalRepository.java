@@ -16,7 +16,7 @@ public class FestivalRepository {
     private final AuditorService auditorService;
 
     @Value("${create.festival}")
-    private String createQuery ;
+    private String createQuery;
 
     public boolean createFestival(Festival festival){
         var festivalEntity = auditorService.entityCreation(festival);
