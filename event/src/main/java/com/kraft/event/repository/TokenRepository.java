@@ -20,6 +20,8 @@ public class TokenRepository {
     private final String searchByApplicationUserId;
     @Value("${search.by.token}")
     private final String searchByToken;
+    @Value("${update.by.token}")
+    private final String updateToken;
 
     public boolean createAToken(Token token){
         var namedParameters = new BeanPropertySqlParameterSource(token);
@@ -34,5 +36,10 @@ public class TokenRepository {
     public Token findByApplicationUserId(Long id){
         var parameters = new MapSqlParameterSource("application_user_id",id);
         return namedParameterJdbcTemplate.queryForObject(searchByApplicationUserId,parameters,new TokenRowMapper());
+    }
+
+    public void saveToken(Token token){
+        var namedParameters = new BeanPropertySqlParameterSource(token);
+        namedParameterJdbcTemplate.update(updateToken, namedParameters);
     }
 }
