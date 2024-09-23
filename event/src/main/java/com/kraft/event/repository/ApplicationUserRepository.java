@@ -16,7 +16,7 @@ public class ApplicationUserRepository {
     private final AuditorService auditorService;
 
     @Value("${search.by.email}")
-    private final String  searchByEmail;
+    private String searchByEmail;
 
     public ApplicationUser findByEmail(String email){
         var parameters = new MapSqlParameterSource("email",email);

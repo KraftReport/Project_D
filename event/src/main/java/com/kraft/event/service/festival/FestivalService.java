@@ -1,7 +1,7 @@
 package com.kraft.event.service.festival;
 
-import com.kraft.event.DTO.FestivalRequestModal;
+import com.kraft.event.DTO.FestivalRequestDTO;
 
 public interface FestivalService {
-    boolean saveFestival(FestivalRequestModal  festivalRequestModal);
+    boolean saveFestival(FestivalRequestDTO festivalRequestDTO);
 }

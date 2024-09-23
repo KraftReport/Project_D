@@ -9,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class ArtistFestivalTypeModel {
-    private List<Long> artistIds;
+public class SponsorFestivalTypeDTO {
+    private List<Long> sponsorIds;
     private Long festivalTypeId;
 }

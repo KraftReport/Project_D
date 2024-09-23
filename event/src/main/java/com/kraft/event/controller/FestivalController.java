@@ -1,6 +1,6 @@
 package com.kraft.event.controller;
 
-import com.kraft.event.DTO.FestivalRequestModal;
+import com.kraft.event.DTO.FestivalRequestDTO;
 import com.kraft.event.service.festival.FestivalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class FestivalController {
     private final FestivalService festivalService;
 
     @PostMapping("/createNewFestival")
-    public ResponseEntity<Boolean> createNewFestival(@RequestBody FestivalRequestModal festivalRequestModal){
-        return ResponseEntity.ok(festivalService.saveFestival(festivalRequestModal));
+    public ResponseEntity<Boolean> createNewFestival(@RequestBody FestivalRequestDTO festivalRequestDTO){
+        return ResponseEntity.ok(festivalService.saveFestival(festivalRequestDTO));
     }
 }

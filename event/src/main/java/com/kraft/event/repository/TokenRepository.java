@@ -15,13 +15,13 @@ public class TokenRepository {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Value("${create.token}")
-    private final String createQuery;
+    private String createQuery;
     @Value("${search.by.application.user.id}")
-    private final String searchByApplicationUserId;
+    private String searchByApplicationUserId;
     @Value("${search.by.token}")
-    private final String searchByToken;
+    private String searchByToken;
     @Value("${update.by.token}")
-    private final String updateToken;
+    private String updateToken;
 
     public boolean createAToken(Token token){
         var namedParameters = new BeanPropertySqlParameterSource(token);

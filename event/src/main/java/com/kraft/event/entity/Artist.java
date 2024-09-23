@@ -16,7 +16,6 @@ import lombok.*;
 @Builder
 public class Artist extends BaseEntity{
 
-
     private String name;
     private String photo;
 }
