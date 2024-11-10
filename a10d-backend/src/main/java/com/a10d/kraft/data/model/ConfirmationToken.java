@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class ConfirmationToken {
+public class ConfirmationToken extends DateAudit{
 
 	private static final int EXPIRATION = 60 * 24;
 	
