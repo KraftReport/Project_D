@@ -19,36 +19,36 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @PropertySource("classpath:query.properties")
 @RequiredArgsConstructor
 public class ApplicationConfiguration {
+//
+//    private final ApplicationUserRepository applicationUserRepository;
 
-    private final ApplicationUserRepository applicationUserRepository;
+//    @Bean
+//    @Primary
+//    public AuditorAware<Long> auditorAware(){
+//        return new AuditAwareConfig();
+//    }
+//
+//    @Bean
+//    public PasswordEncoder passwordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
 
-    @Bean
-    @Primary
-    public AuditorAware<Long> auditorAware(){
-        return new AuditAwareConfig();
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//        return applicationUserRepository::findByEmail;
+//    }
+//
+//    @Bean
+//    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+//        return authenticationConfiguration.getAuthenticationManager();
+//    }
 
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return applicationUserRepository::findByEmail;
-    }
-
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider(){
-        var authenticationProvider =  new DaoAuthenticationProvider();
-        authenticationProvider.setPasswordEncoder(passwordEncoder());
-        authenticationProvider.setUserDetailsService(userDetailsService());
-        return authenticationProvider;
-    }
+//    @Bean
+//    public AuthenticationProvider authenticationProvider(){
+//        var authenticationProvider =  new DaoAuthenticationProvider();
+//        authenticationProvider.setPasswordEncoder(passwordEncoder());
+//        authenticationProvider.setUserDetailsService(userDetailsService());
+//        return authenticationProvider;
+//    }
 
 }
