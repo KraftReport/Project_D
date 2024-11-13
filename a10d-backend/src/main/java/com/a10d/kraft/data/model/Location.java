@@ -25,4 +25,8 @@ public class Location extends DateAudit {
 	private boolean isActive;
 	private boolean notiStatus;
 	
+	private LocationType locationType;
+	private User user;
+	private Attendance checkInAttendance;
+	
 }
