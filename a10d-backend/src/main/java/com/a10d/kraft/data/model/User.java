@@ -1,15 +1,37 @@
 package com.a10d.kraft.data.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.Builder;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
+@Builder
+@ToString(exclude = {"space","userLocations","teams","attendances"})
+@JsonIgnoreProperties({"hibernateLzayInitializer","hadler"})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
 public class User extends DateAudit {
 
 	@Id
@@ -26,4 +48,24 @@ public class User extends DateAudit {
 	private LocalDateTime registerationDate;
 	private boolean isFirstTimeLogin;
 	private boolean isDeviceRegistered;
+	
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "space_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Space space; 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<UserLocation> userLocations = new ArrayList<>(); 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<TeamMember> teamMembers = new ArrayList<>(); 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    private List<Attendance> attendances = new ArrayList<>();
+    
+    public void addLocation(Location location) {
+    	var userLocation = new UserLocation(this, location);
+    	userLocations.add(userLocation);
+    	location.getUserLocations().add(userLocation);
+    }
 }

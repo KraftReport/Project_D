@@ -14,5 +14,5 @@ import lombok.NoArgsConstructor;
 public class UserLocationId implements Serializable {
 
 	private Long userId;
-	private Long LocationId;
+	private Long locationId;
 }
