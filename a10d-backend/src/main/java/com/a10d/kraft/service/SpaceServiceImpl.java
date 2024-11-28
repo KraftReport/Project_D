@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.a10d.kraft.data.model.Space;
 import com.a10d.kraft.data.repository.SpaceRepository;
+import com.a10d.kraft.service.helper.Helper;
 
 import lombok.RequiredArgsConstructor;
 

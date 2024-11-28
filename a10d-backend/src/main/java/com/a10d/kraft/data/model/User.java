@@ -22,13 +22,17 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
 @Entity
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString(exclude = {"space","userLocations","teams","attendances"})
 @JsonIgnoreProperties({"hibernateLzayInitializer","hadler"})
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
