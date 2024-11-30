@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import org.springframework.stereotype.Service;
 
 import com.a10d.kraft.data.model.Space;
+import com.a10d.kraft.data.model.User;
 import com.a10d.kraft.data.repository.SpaceRepository;
 import com.a10d.kraft.service.helper.Helper;
 
@@ -22,6 +23,7 @@ public class SpaceServiceImpl implements SpaceService {
 		return helper.checkExceptionForRepositoryOperations(() -> 
 		spaceRepository.save(Space.builder().name(spaceName).build()) != null);
 	}
+ 
  
 
 }
