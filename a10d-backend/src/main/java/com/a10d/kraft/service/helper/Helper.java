@@ -1,13 +1,10 @@
 package com.a10d.kraft.service.helper;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
+ 
 import java.util.function.Supplier;
  
 import org.springframework.stereotype.Service;
 
-import ch.qos.logback.core.util.StringUtil;
-import io.micrometer.common.util.StringUtils;
+import ch.qos.logback.core.util.StringUtil; 
 
 @Service
 public class Helper {
@@ -16,7 +13,7 @@ public class Helper {
 		try {
 			return action.get();
 		}catch (Exception e) {
-			throw new RuntimeException("something went wrong in making repository operation");
+			throw new RuntimeException(e.getMessage());
 		} 
 	}
 	
