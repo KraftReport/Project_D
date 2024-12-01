@@ -24,8 +24,8 @@ public class DateAudit implements Serializable {
 
 	@CreatedDate
 	@Column(nullable = false,updatable = false)
-	private LocalDateTime createdDate;
+	private LocalDateTime createdDate = LocalDateTime.now();
 	@LastModifiedDate
 	@Column(nullable = false)
-	private LocalDateTime lastModifiedDate;
+	private LocalDateTime lastModifiedDate = LocalDateTime.now();
 }

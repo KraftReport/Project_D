@@ -20,8 +20,10 @@ public class SpaceServiceImpl implements SpaceService {
 
 	@Override
 	public boolean createSpace(String spaceName) {
+		var space = Space.builder().name(spaceName)
+				.isActive(true).build();
 		return helper.checkExceptionForRepositoryOperations(() -> 
-		spaceRepository.save(Space.builder().name(spaceName).build()) != null);
+		spaceRepository.save(space) != null);
 	}
  
  
