@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import com.a10d.kraft.data.model.LocationType;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,6 +28,6 @@ public class LocationCreateRequestDTO {
 	private BigDecimal longitude;
 	private int radius;
 	private boolean isActive;
-	private boolean notiStatus;
+	private boolean notiStatus; 
 	private LocationType locationType;
 }

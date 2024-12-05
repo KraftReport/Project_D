@@ -37,7 +37,7 @@ public class Helper {
 	            field.setAccessible(true); 
 	            var value = field.get(source);  
 	            var methodName = changeFirstWordToCapitalLetter(field.getName());
-	            var builderMethod = targetClass.getMethod(methodName, field.getType());  
+	            var builderMethod = targetClass.getMethod("get"+methodName, field.getType());  
 	            builderMethod.invoke(builder, value);  
 	        }
 	        return builder;
@@ -49,6 +49,6 @@ public class Helper {
 		if(StringUtil.isNullOrEmpty(word)) {
 			return word;
 		}
-		return word.substring(0,1).toUpperCase().concat(word.substring(2));
+		return word.substring(0,1).toUpperCase().concat(word.substring(1));
 	}
 }

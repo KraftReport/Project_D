@@ -46,15 +46,15 @@ public class User extends DateAudit {
 	private String phoneNumber;
 	private String password;
 	private String staffId;
-	private boolean isActive;
-	private boolean isDelete;
-	private boolean notiStatus;
+	private boolean isActive = true;
+	private boolean isDelete = false;
+	private boolean notiStatus = true;
 	private LocalDateTime registerationDate;
-	private boolean isFirstTimeLogin;
-	private boolean isDeviceRegistered;
+	private boolean isFirstTimeLogin = true;
+	private boolean isDeviceRegistered = true;
 	
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "space_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "space_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Space space; 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -18,8 +18,15 @@ public class LocationServiceImpl implements LocationService {
 
 	@Override
 	public boolean createLocation(LocationCreateRequestDTO locationCreateRequestDTO) {
-		var location = helper.mapDtoForEntityCreation(locationCreateRequestDTO, new Location());
+		var location = Location.builder()
+				.name(locationCreateRequestDTO.getName())
+				.lattitude(locationCreateRequestDTO.getLattitude())
+				.longitude(locationCreateRequestDTO.getLongitude())
+				.isActive(locationCreateRequestDTO.isActive())
+				.notiStatus(locationCreateRequestDTO.isNotiStatus())
+				.radius(locationCreateRequestDTO.getRadius())
+				.locationType(locationCreateRequestDTO.getLocationType()) 
+				.build();
 		return helper.checkExceptionForRepositoryOperations(()->locationRepository.save(location)!=null); 
-	}
-
+	} 
 }
