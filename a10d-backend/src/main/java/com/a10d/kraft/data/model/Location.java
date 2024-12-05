@@ -23,12 +23,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @ToString(exclude = {"checkInAttendances", "checkOutAttendances","userLocations","space"})
 @Entity
+@Builder
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Location extends DateAudit {
 
@@ -55,8 +57,8 @@ public class Location extends DateAudit {
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "checkOutLocation",orphanRemoval = true)
 	@JsonBackReference
 	private List<Attendance> checkOutAttendances;
-	@ManyToOne(fetch = FetchType.LAZY,optional = false)
-	@JoinColumn(name = "space_id",nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY,optional = true)
+	@JoinColumn(name = "space_id",nullable = true )
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Space space;
 	

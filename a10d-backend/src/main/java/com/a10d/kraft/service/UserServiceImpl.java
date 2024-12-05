@@ -21,9 +21,16 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean createUser(UserCreateRequestDTO userCreateRequestDTO) { 
+		var user = User.builder()
+				.name(userCreateRequestDTO.getName())
+				.email(userCreateRequestDTO.getEmail())
+				.phoneNumber(userCreateRequestDTO.getPhoneNumber())
+				.password(userCreateRequestDTO.getPassword()) 
+				.staffId(userCreateRequestDTO.getStaffId())
+				.build();
 		return helper
 				.checkExceptionForRepositoryOperations
-				(()->userRepository.save(helper.mapDtoForEntityCreation(userCreateRequestDTO,new User()))!=null);
+				(()->userRepository.save(user) != null);
 	}
 
 	@Override
